@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:latest
+    hostname: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo:/data
+  spark-master:
+    image: spark:2.1.0
+    command: /usr/local/spark-2.1.0-bin-hadoop2.7/sbin/start-master.sh
+    ports:
+      - "8080:8080"
+      - "4040:4040"
+    links:
+      - mongo
+    volumes:
+      - ./apps:/apps
+    hostname: spark-master
+  spark-slave:
+    image: spark:2.1.0
+    command: /usr/local/spark-2.1.0-bin-hadoop2.7/sbin/start-slave.sh spark://spark-master:7077
+    ports:
+      - "8081"
+      - "8082"
+    links:
+      - spark-master
+    hostname: spark-slave
