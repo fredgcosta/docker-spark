@@ -25,3 +25,6 @@ Alternatively, you can run the same application directly inside the container.
 
 # $docker-compose down
 In order to shut down all containers.
+
+# Check your Spark jobs
+http://localhost:8080
