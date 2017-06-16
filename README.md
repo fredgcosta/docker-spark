@@ -13,14 +13,13 @@ More slave machines may be started. “K” is the number of machines(i.e: conta
 # $docker-compose logs <container-id>
 It may be useful for analyzing the log of a specific container.
 
-# $docker-compose exec spark-master java -jar /example.jar /input-data
+# $docker-compose exec spark-master spark-submit --class <main-class> spark://spark-master:6066 --deploy-mode cluster <application-jar>
 Example of running a Java application within Spark.
 
 # $docker exec -it <container-id of the master machine> /bin/bash
 You can access the container and submit the same jar there.
 
-# $spark-submit --class papis.demo -master spark://<spark-master-host>:6066
- /example.jar /input-data
+# $spark-submit --class <main-class> spark://spark-master:6066 --deploy-mode cluster <application-jar>
 Alternatively, you can run the same application directly inside the container.
 
 # $docker-compose down

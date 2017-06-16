@@ -17,6 +17,7 @@ services:
       - mongo
     volumes:
       - ./apps:/apps
+      - ./input_data:/input_data
     hostname: spark-master
   spark-slave:
     image: spark:2.1.0
