@@ -7,7 +7,7 @@ First step: build Spark image
 # $docker-compose up -d
 Start containers (in detached mode, running containers in the background) for running MongoDB and a Spark Cluster (based on the image built previously). The Spark cluster simulates a master machine and a slave machine. 
 
-# $docker-compose scale spark-scala=K
+# $docker-compose scale spark-slave=K
 More slave machines may be started. “K” is the number of machines(i.e: containers) to start.
 
 # $docker-compose logs <container-id>
