@@ -27,4 +27,6 @@ services:
       - "8082"
     links:
       - spark-master
+    volumes:
+      - ./input_data:/input_data
     hostname: spark-slave
