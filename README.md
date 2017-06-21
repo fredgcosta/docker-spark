@@ -14,7 +14,10 @@ More slave machines may be started. “K” is the number of machines(i.e: conta
 It may be useful for analyzing the log of a specific container.
 
 # $ docker-compose exec spark-master spark-submit --class \<main-class\> spark://spark-master:6066 --deploy-mode cluster \<application-jar\>
-Example of running a Java application within Spark.
+Example of running a Java application within Spark. 
+- Note that specfic parameters for the jar application should be scified in the end of the line. 
+- For Spark Standalone mode (the way this project run Spark) you should specify file paths as follows: file:///path/file.txt
+- You can reference other containers as the host name specified within the docker-compose file. Ex: dockerspark_mongo_1
 
 # $ docker exec -it \<container-id of the master machine\> /bin/bash
 You can access the container and submit the same jar there.
