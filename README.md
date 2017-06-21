@@ -19,7 +19,7 @@ Example of running a Java application within Spark.
 # $ docker exec -it \<container-id of the master machine\> /bin/bash
 You can access the container and submit the same jar there.
 
-# $ spark-submit --class \<main-class\> --master spark://spark-master:6066 \<application-jar\>
+# $ spark-submit --class \<main-class\> --master spark://spark-master:7077 \<application-jar\>
 Alternatively, you can run the same application directly inside the container.
 
 # $ docker-compose down
